@@ -43,7 +43,7 @@
 
 .secure-area {
   font-weight: bold;
-  background:url("../assets/images/Padlock.png") no-repeat;
+  background: url("../assets/images/Padlock.png") no-repeat;
   padding: 0 10px 0 16px;
   float: left;
   color: #666;
@@ -64,5 +64,116 @@
   font-weight: normal;
 }
 
+.login_section .login_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
 
+.login_section .login_container .login_form {
+  width: 30%;
+}
+
+.login_form .input_container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.login_form .input_container label {
+  font-weight: normal;
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+.login_form .input_container input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  outline: 0;
+}
+
+.login_form .input_container input:focus {
+  border: 1px solid black;
+}
+
+.login_form .input_container button {
+  padding: 0.5rem;
+  background: #0077be;
+  color: #fff;
+  border: 0;
+  width: 100px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input_container small a {
+  color: #0150e2;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.stay_connected {
+  border-left: 1px solid #ccc;
+  height: 275px;
+  padding-left: 60px;
+}
+
+.stay_connected h1 {
+  font-size: 15px;
+  color: #544a42;
+  font-weight: normal;
+}
+
+.stay_connected .inner_connected {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stay_connected .inner_connected div button {
+  background-image: linear-gradient(#dc1431, #c41230);
+  border: 0;
+  width: 100px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.forget_password h1 {
+  font-size: 15px;
+  color: #544a42;
+  font-weight: normal;
+}
+
+.forget_password p {
+  color: #36C;
+  font-size: 12px;
+}
+
+.forget_password p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+footer .footer_container {
+  background: #eee;
+  margin-top: 5rem;
+  height: 150px;
+  width: 100%;
+  padding: 0.5rem 2rem;
+}
+
+footer .footer_container p {
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+}
+
+footer .footer_container p:nth-child(2) {
+  color: #36C;
+}
 
