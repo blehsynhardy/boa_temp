@@ -97,8 +97,11 @@ const Signin = () => {
 
       <footer>
         <div className="footer_container">
-            <p>secure Area</p>
-            <p>Privacy | Security | your choice privacy choice</p>
+          <p>secure Area</p>
+          <p>Privacy | Security | your choice privacy choice</p>
+
+          <p>Bank of America, N.A. Member FDIC. Equal Housing Lender</p>
+          <p>© 2025 Bank of America Corporation.</p>
         </div>
       </footer>
     </div>
