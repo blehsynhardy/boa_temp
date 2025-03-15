@@ -1,16 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/images/BofA_rgb.png";
+import lineLogo from "../assets/images/reactss.svg";
+import { ToastContainer, toast } from "react-toastify";
 import Connected from "../assets/images/mobile_llama.png";
-import Padlock from "../assets/images/Padlock.png";
 import "./Signin.css";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
+  const navigate = useNavigate();
+  // Test credentials
+  const testCredentials = {
+    userId: "U173893839",
+    password: "kym1959",
+  };
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (
+      username === testCredentials.userId &&
+      password === testCredentials.password
+    ) {
+      // Create user object to store in session
+      const user = {
+        userId: username,
+        isLoggedIn: true,
+        loginTime: new Date().toISOString(),
+      };
+
+      // Save to session storage
+      sessionStorage.setItem("user", JSON.stringify(user));
+
+      // Show success toast
+      toast.success("Login successful! Redirecting to dashboard...", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+
+      // Redirect to dashboard after a short delay to show the toast
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 2000);
+    } else {
+      toast.error("Invalid user ID or password", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
+  };
+
   return (
     <div className="container">
+      <ToastContainer />
       <div className="banner">
         <span>Bank of America deposit products: </span>
         <img
-          src="https://secure1.bac-assets.com/spa/widgets/gt-secure-fdic-widget/1.0.0/spa-assets/images/assets-images-global-fdic-fdic-digital-sign-CSX37f66a3e.svg"
+          src={lineLogo}
           alt="FDIC-Insured - Backed by the full faith and credit of the U.S. Government"
           className="fdic-digital-sign"
         />
@@ -45,14 +101,26 @@ const Signin = () => {
       <section className="login_section">
         <div className="login_container">
           <div className="login_form">
-            <form>
+            <form onSubmit={handleLogin}>
               <div className="input_container">
                 <label for="email">User Id</label>
-                <input type="email" id="email" name="email" />
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
               </div>
               <div className="input_container">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" />
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </div>
 
               <div className="input_container">
