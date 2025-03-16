@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
   faThLarge,
-  faWallet,
   faExchangeAlt,
   faUser,
   faCog,
@@ -113,7 +112,7 @@ const DashboardLayout = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink
+                  {/* <NavLink
                     to="/accounts"
                     className={({ isActive }) =>
                       "nav-link d-flex align-items-center p-3" +
@@ -123,7 +122,7 @@ const DashboardLayout = () => {
                   >
                     <FontAwesomeIcon icon={faWallet} className="me-3" />
                     <span>Accounts</span>
-                  </NavLink>
+                  </NavLink> */}
                 </li>
                 <li className="nav-item">
                   <NavLink

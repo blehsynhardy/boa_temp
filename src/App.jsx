@@ -14,6 +14,8 @@ import OTPVerification from "./Pages/OTPVerification";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TransferSuccess from "./Pages/TransferSuccess";
 import TransferFailure from "./Pages/TransferFailure";
+import Profile from "./Pages/Profile";
+import Transaction from "./Pages/Transaction";
 
 // Create the router with proper nesting
 const router = createBrowserRouter(
@@ -31,9 +33,9 @@ const router = createBrowserRouter(
         <Route path="/transfer-success" element={<TransferSuccess />} />
         <Route path="/transfer-failure" element={<TransferFailure />} />
 
-        {/* <Route path="transactions" element={<Transactions />} />
+        <Route path="transactions" element={<Transaction />} />
         <Route path="profile" element={<Profile />} />
-        <Route path="settings" element={<Settings />} /> */}
+        {/* <Route path="settings" element={<Settings />} /> */}
         {/* Add other routes as needed */}
       </Route>
     </>
