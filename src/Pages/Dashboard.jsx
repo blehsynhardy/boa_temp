@@ -19,7 +19,7 @@ const Dashboard = () => {
     if (!user) {
       navigate("/");
     }
-  },[]);
+  }, [navigate]);
   const getGreeting = () => {
     const hour = new Date().getHours();
     if (hour < 12) {
