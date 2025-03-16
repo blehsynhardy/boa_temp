@@ -9,8 +9,10 @@ import {
   faCreditCard,
   faWallet,
 } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const getGreeting = () => {
     const hour = new Date().getHours();
     if (hour < 12) {
@@ -21,6 +23,11 @@ const Dashboard = () => {
       return "Good Evening";
     }
   };
+
+  const handleTransferClick = () => {
+    navigate("/transfer");
+  };
+
   return (
     <>
       <div className="welcome-section mb-4">
@@ -39,6 +46,7 @@ const Dashboard = () => {
           <button
             className="btn"
             style={{ backgroundColor: "#e31837", color: "white" }}
+            onClick={handleTransferClick}
           >
             <FontAwesomeIcon icon={faWallet} className="me-2" />
             Transfer
@@ -230,7 +238,9 @@ const Dashboard = () => {
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">Recent Transactions</h5>
-            <p className="card-text text-center mt-3 mb-3 fw-bold">No recent transactions found.</p>
+            <p className="card-text text-center mt-3 mb-3 fw-bold">
+              No recent transactions found.
+            </p>
           </div>
         </div>
       </div>
