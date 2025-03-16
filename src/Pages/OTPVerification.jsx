@@ -13,6 +13,7 @@ const OTPVerification = () => {
   const [transferDetails, setTransferDetails] = useState(null);
   const [timer, setTimer] = useState(60);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     // Retrieve transfer details from session storage
@@ -71,18 +72,51 @@ const OTPVerification = () => {
     setOtp(["", "", "", "", "", ""]);
     // Focus on first field
     document.getElementById("otp-0").focus();
+    // Clear any previous error
+    setErrorMessage("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage("");
+
+    // Get the OTP value
+    const otpValue = otp.join("");
 
     // Mock API call or verification process
+    // Let's simulate a 20% chance of failure for demo purposes
     setTimeout(() => {
       setIsSubmitting(false);
-      // Redirect to success page or dashboard
-      sessionStorage.removeItem("transferDetails");
-      navigate("/transfer-success");
+
+      if (Math.random() > 0.2) {
+        // Success case
+        sessionStorage.removeItem("transferDetails");
+        navigate("/transfer-failure");
+      } else {
+        // Failure case - you can set different error messages based on different scenarios
+        if (otpValue === "000000") {
+          // Example of a specific error for a certain OTP
+          const error = "Invalid verification code. Please try again.";
+          setErrorMessage(error);
+          sessionStorage.setItem("transferError", error);
+        } else if (parseFloat(transferDetails.amount) > 10000) {
+          // Example of an amount-related error
+          const error =
+            "Transfer amount exceeds your daily limit. Please try a smaller amount.";
+          setErrorMessage(error);
+          sessionStorage.setItem("transferError", error);
+        } else {
+          // Generic error
+          const error =
+            "We couldn't process your transfer at this time. Please try again later.";
+          setErrorMessage(error);
+          sessionStorage.setItem("transferError", error);
+        }
+
+        // Navigate to failure page
+        navigate("/transfer-failure");
+      }
     }, 2000);
   };
 
@@ -145,6 +179,12 @@ const OTPVerification = () => {
             </p>
             <p className="small text-muted">Code expires in {timer} seconds</p>
           </div>
+
+          {errorMessage && (
+            <div className="alert alert-danger" role="alert">
+              {errorMessage}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit}>
             <div className="d-flex justify-content-center gap-2 mb-4">

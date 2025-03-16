@@ -101,7 +101,7 @@ const Dashboard = () => {
             <div className="card-body d-flex justify-content-between">
               <div>
                 <p className="text-secondary mb-2">Saving Account</p>
-                <h3>$0.00</h3>
+                <h3>$10,000</h3>
                 <div className="text-success">
                   <FontAwesomeIcon icon={faArrowUp} />{" "}
                   <span style={{ fontSize: "12px" }}>5% Since last month</span>

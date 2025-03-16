@@ -59,7 +59,7 @@ const Transfer = () => {
                 required
               >
                 <option value="checking">Checking Account - $100,000</option>
-                <option value="savings">Savings Account - $0.00</option>
+                <option value="savings">Savings Account - $10,000</option>
               </select>
             </div>
 

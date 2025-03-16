@@ -28,6 +28,7 @@ const router = createBrowserRouter(
         <Route path="transfer" element={<Transfer />} />
         <Route path="/otp-verification" element={<OTPVerification />} />
         <Route path="/transfer-success" element={<TransferSuccess />} />
+        <Route path="/transfer-failure" element={<TransferFailure />} />
 
         {/* <Route path="transactions" element={<Transactions />} />
         <Route path="profile" element={<Profile />} />
