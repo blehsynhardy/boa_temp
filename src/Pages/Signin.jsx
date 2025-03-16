@@ -9,6 +9,12 @@ import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
   const navigate = useNavigate();
+
+  const user = sessionStorage.getItem("user");
+  if (user) {
+    navigate("/dashboard");
+  }
+
   // Test credentials
   const testCredentials = {
     userId: "U173893839",
@@ -93,7 +99,7 @@ const Signin = () => {
       </div>
 
       <section className="hero_section">
-        <div className="login_header">
+        <div className="a-login_header">
           <h1>Log In to Online Banking</h1>
         </div>
       </section>

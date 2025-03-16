@@ -49,7 +49,7 @@
   color: #666;
 }
 
-.hero_section .login_header {
+.hero_section .a-login_header {
   display: flex;
   align-items: center;
   margin-top: 1rem;
@@ -58,7 +58,7 @@
   padding: 0 25px;
 }
 
-.hero_section .login_header h1 {
+.hero_section .a-login_header h1 {
   color: #fff;
   font-size: 24px;
   font-weight: normal;

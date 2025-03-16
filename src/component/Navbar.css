@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.bg-red {
+    background-color: #dd1430;
+    margin: -0px;
+}
+
+.navbar-brand img {
+    filter: brightness(0) invert(1);
+}
