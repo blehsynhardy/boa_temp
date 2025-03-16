@@ -1,47 +1,31 @@
-/* DashboardLayout.css */
+/* In your CSS file (e.g., index.css or a new file like DashboardLayout.css) */
 
-.sidebar-item {
-  color: #555;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.sidebar-item:hover {
-  background-color: #f8f9fa;
-  cursor: pointer;
-}
-
-.sidebar-item.active {
-  background-color: #f8f9fa;
-  color: #e31837;
-  border-left: 3px solid #e31837;
-  font-weight: 500;
-}
-
-/* For desktop */
-@media (min-width: 768px) {
-  .main-content {
-    margin-left: 250px;
+.nav-link {
+    color: #495057;
+    transition: all 0.3s;
   }
-}
-
-/* For mobile */
-@media (max-width: 767.98px) {
-  .main-content {
-    margin-left: 0;
+  
+  .nav-link:hover {
+    background-color: #f8f9fa;
   }
-
-  .sidebar {
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
+  
+  .nav-link.active {
+    color: #e31837 !important;
+    background-color: #f8f9fa;
+    border-left: 3px solid #e31837;
   }
-
-  .sidebar.show {
-    transform: translateX(0);
-    display: block !important;
+  
+  @media (min-width: 768px) {
+    .sidebar-sticky {
+      position: sticky;
+      top: 0;
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+    }
+    
+    .content-shifted {
+      margin-left: 16.666667%; /* col-md-2 width */
+    }
   }
-
-  .main-content.sidebar-open {
-    margin-left: 0;
-  }
-}
+  
+  /* Placeholder Page Components */

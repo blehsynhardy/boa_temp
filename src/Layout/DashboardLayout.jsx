@@ -36,7 +36,13 @@ const DashboardLayout = () => {
       >
         <div className="container-fluid">
           <a className="navbar-brand text-white fw-bold" href="#/">
-            BANK OF AMERICA
+            <img
+              class="jss9"
+              src="https://banking-dashboard.netlify.app/images/BOALogo.png"
+              alt="icon"
+              width="170px"
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
           </a>
 
           {/* Mobile Toggle Button */}
@@ -72,23 +78,26 @@ const DashboardLayout = () => {
         </div>
       </nav>
 
-      <div className="container-fluid">
-        <div className="row">
-          {/* Sidebar - Hidden on mobile by default */}
+      <div className="container-fluid g-0">
+        <div className="row g-0">
+          {/* Sidebar */}
           <div
-            className={`col-md-3 col-lg-2 d-md-block ${
-              sidebarOpen ? "d-block" : "d-none"
+            className={`sidebar col-md-3 col-lg-2 ${
+              sidebarOpen ? "d-block" : "d-none d-md-block"
             }`}
             style={{
               backgroundColor: "white",
-              position: "fixed",
               height: "calc(100vh - 56px)",
-              zIndex: 1000,
-              boxShadow: "2px 0 5px rgba(0,0,0,0.1)",
-              padding: "0",
+              position: "fixed",
+              left: 0,
+              top: "56px",
+              bottom: 0,
+              zIndex: 100,
+              boxShadow: "0 2px 5px 0 rgba(0,0,0,0.05)",
+              padding: 0,
             }}
           >
-            <div className="sidebar-sticky pt-3">
+            <div className="sidebar-sticky p-0">
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <NavLink
@@ -160,19 +169,14 @@ const DashboardLayout = () => {
           </div>
 
           {/* Main Content */}
-          <main
-            role="main"
-            className={`col-md-9 ml-sm-auto col-lg-10 px-md-4 ${
-              sidebarOpen ? "content-shifted" : ""
-            }`}
-            style={{
-              marginLeft: sidebarOpen ? "250px" : "0",
-              transition: "margin-left 0.3s",
-              paddingTop: "2rem",
-            }}
+          <div
+            className="col-md-9 col-lg-10 ms-auto"
+            style={{ paddingTop: "20px" }}
           >
-            <Outlet />
-          </main>
+            <div className="container-fluid">
+              <Outlet />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -188,7 +192,7 @@ const DashboardLayout = () => {
             right: 0,
             bottom: 0,
             backgroundColor: "rgba(0,0,0,0.5)",
-            zIndex: 999,
+            zIndex: 99,
           }}
         />
       )}
