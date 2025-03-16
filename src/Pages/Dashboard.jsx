@@ -175,16 +175,62 @@ const Dashboard = () => {
       </div>
 
       {/* Accounts Section */}
-      <div className="mt-5">
+      <div className="mt-2">
         <h4>Accounts</h4>
         <div className="row mt-3">
           {/* Account cards would be added here */}
           <div className="col-md-3 mb-4">
             <div className="card shadow-sm">
               <div className="card-body text-center">
-                <p>Bank of America</p>
+                <img
+                  src="https://banking-dashboard.netlify.app/images/logos/boa.png"
+                  alt=""
+                  width="100px"
+                />
               </div>
             </div>
+          </div>
+
+          <div className="col-md-3 mb-4">
+            <div className="card shadow-sm">
+              <div className="card-body text-center">
+                <img
+                  src="	https://banking-dashboard.netlify.app/images/logos/cs.png"
+                  alt=""
+                  width="100px"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-md-3 mb-4">
+            <div className="card shadow-sm">
+              <div className="card-body text-center">
+                <img
+                  src="https://banking-dashboard.netlify.app/images/logos/rh.png"
+                  alt=""
+                  width="100px"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-md-3 mb-4">
+            <div className="card shadow-sm">
+              <div className="card-body text-center">
+                <img
+                  src="https://banking-dashboard.netlify.app/images/logos/m1.png"
+                  alt=""
+                  width="100px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-3">
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title">Recent Transactions</h5>
+            <p className="card-text text-center mt-3 mb-3 fw-bold">No recent transactions found.</p>
           </div>
         </div>
       </div>
