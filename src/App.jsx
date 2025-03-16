@@ -13,6 +13,7 @@ import Transfer from "./Pages/Transfer";
 import OTPVerification from "./Pages/OTPVerification";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TransferSuccess from "./Pages/TransferSuccess";
+import TransferFailure from "./Pages/TransferFailure";
 
 // Create the router with proper nesting
 const router = createBrowserRouter(
