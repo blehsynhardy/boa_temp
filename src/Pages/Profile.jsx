@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ProfileImage from "../assets/images/profile.jpeg";
 import {
   faArrowLeft,
   faUser,
@@ -102,98 +103,101 @@ const Profile = () => {
     }, 3000);
   };
 
-  const renderPersonalInfo = () => (
+const renderPersonalInfo = () => (
     <div className="card shadow-sm">
-      <div className="card-header d-flex justify-content-between align-items-center">
-        <h5 className="mb-0">Personal Information</h5>
-        <button 
-          type="button" 
-          className="btn btn-sm btn-outline-primary"
-          onClick={() => setIsEditing(!isEditing)}
-        >
-          {isEditing ? "Cancel" : "Edit"}
-        </button>
-      </div>
-      <div className="card-body">
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3 row">
-            <label htmlFor="firstName" className="col-sm-3 col-form-label">First Name</label>
-            <div className="col-sm-9">
-              <input
-                type="text"
-                className="form-control"
-                id="firstName"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleInputChange}
-                disabled={!isEditing}
-              />
-            </div>
-          </div>
-          <div className="mb-3 row">
-            <label htmlFor="lastName" className="col-sm-3 col-form-label">Last Name</label>
-            <div className="col-sm-9">
-              <input
-                type="text"
-                className="form-control"
-                id="lastName"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleInputChange}
-                disabled={!isEditing}
-              />
-            </div>
-          </div>
-          <div className="mb-3 row">
-            <label htmlFor="email" className="col-sm-3 col-form-label">Email</label>
-            <div className="col-sm-9">
-              <div className="input-group">
-                <span className="input-group-text">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                </span>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  disabled={!isEditing}
-                />
-              </div>
-            </div>
-          </div>
-          <div className="mb-3 row">
-            <label htmlFor="phone" className="col-sm-3 col-form-label">Phone</label>
-            <div className="col-sm-9">
-              <div className="input-group">
-                <span className="input-group-text">
-                  <FontAwesomeIcon icon={faPhone} />
-                </span>
-                <input
-                  type="tel"
-                  className="form-control"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  disabled={!isEditing}
-                />
-              </div>
-            </div>
-          </div>
-          {isEditing && (
-            <div className="text-end">
-              <button type="submit" className="btn btn-primary">
-                <FontAwesomeIcon icon={faSave} className="me-2" />
-                Save Changes
-              </button>
-            </div>
-          )}
-        </form>
-      </div>
+        <div className="card-header d-flex justify-content-between align-items-center">
+            <h5 className="mb-0">Personal Information</h5>
+            <button 
+                type="button" 
+                className="btn btn-sm btn-outline-primary"
+                onClick={() => setIsEditing(!isEditing)}
+            >
+                {isEditing ? "Cancel" : "Edit"}
+            </button>
+        </div>
+        <div className="card-body">
+            <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                            <img src={ProfileImage} alt="" width="65px" height="70px" className="rounded-circle" />
+                    </div>
+                <div className="mb-3 row">
+                    <label htmlFor="firstName" className="col-sm-3 col-form-label">First Name</label>
+                    <div className="col-sm-9">
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="firstName"
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleInputChange}
+                            disabled={!isEditing}
+                        />
+                    </div>
+                </div>
+                <div className="mb-3 row">
+                    <label htmlFor="lastName" className="col-sm-3 col-form-label">Last Name</label>
+                    <div className="col-sm-9">
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="lastName"
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleInputChange}
+                            disabled={!isEditing}
+                        />
+                    </div>
+                </div>
+                <div className="mb-3 row">
+                    <label htmlFor="email" className="col-sm-3 col-form-label">Email</label>
+                    <div className="col-sm-9">
+                        <div className="input-group">
+                            <span className="input-group-text">
+                                <FontAwesomeIcon icon={faEnvelope} />
+                            </span>
+                            <input
+                                type="email"
+                                className="form-control"
+                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                disabled={!isEditing}
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className="mb-3 row">
+                    <label htmlFor="phone" className="col-sm-3 col-form-label">Phone</label>
+                    <div className="col-sm-9">
+                        <div className="input-group">
+                            <span className="input-group-text">
+                                <FontAwesomeIcon icon={faPhone} />
+                            </span>
+                            <input
+                                type="tel"
+                                className="form-control"
+                                id="phone"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleInputChange}
+                                disabled={!isEditing}
+                            />
+                        </div>
+                    </div>
+                </div>
+                {isEditing && (
+                    <div className="text-end">
+                        <button type="submit" className="btn btn-primary">
+                            <FontAwesomeIcon icon={faSave} className="me-2" />
+                            Save Changes
+                        </button>
+                    </div>
+                )}
+            </form>
+        </div>
     </div>
-  );
+);
 
   const renderAddressInfo = () => (
     <div className="card shadow-sm">
