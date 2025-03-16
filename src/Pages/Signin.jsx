@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/images/BofA_rgb.png";
 import lineLogo from "../assets/images/reactss.svg";
 import { ToastContainer, toast } from "react-toastify";
@@ -8,12 +8,19 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  const user = sessionStorage.getItem("user");
-  if (user) {
-    navigate("/dashboard");
-  }
+    useEffect(() => {
+        const user = sessionStorage.getItem("user");
+        if (user) {
+            navigate("/dashboard");
+        }
+    }, [navigate]);
+
+//   const user = sessionStorage.getItem("user");
+//   if (user) {
+//     navigate("/dashboard");
+//   }
 
   // Test credentials
   const testCredentials = {

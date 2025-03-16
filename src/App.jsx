@@ -8,10 +8,11 @@ import Signin from "./Pages/Signin";
 import Dashboard from "./Pages/Dashboard";
 
 import Accounts from "./Pages/Accounts";
-
-import "bootstrap/dist/css/bootstrap.min.css";
 import DashboardLayout from "./Layout/DashboardLayout";
 import Transfer from "./Pages/Transfer";
+import OTPVerification from "./Pages/OTPVerification";
+import "bootstrap/dist/css/bootstrap.min.css";
+import TransferSuccess from "./Pages/TransferSuccess";
 
 // Create the router with proper nesting
 const router = createBrowserRouter(
@@ -25,6 +26,9 @@ const router = createBrowserRouter(
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="accounts" element={<Accounts />} />
         <Route path="transfer" element={<Transfer />} />
+        <Route path="/otp-verification" element={<OTPVerification />} />
+        <Route path="/transfer-success" element={<TransferSuccess />} />
+
         {/* <Route path="transactions" element={<Transactions />} />
         <Route path="profile" element={<Profile />} />
         <Route path="settings" element={<Settings />} /> */}

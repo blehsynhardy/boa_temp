@@ -1,5 +1,5 @@
 // Dashboard.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChartLine,
@@ -13,6 +13,13 @@ import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = sessionStorage.getItem("user");
+    if (!user) {
+      navigate("/");
+    }
+  },[]);
   const getGreeting = () => {
     const hour = new Date().getHours();
     if (hour < 12) {
