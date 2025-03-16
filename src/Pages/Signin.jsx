@@ -182,7 +182,7 @@ const Signin = () => {
           <p>Privacy | Security | your choice privacy choice</p>
 
           <p>Bank of America, N.A. Member FDIC. Equal Housing Lender</p>
-          <p>© 2025 Bank of America Corporation.</p>
+          <p>© 2025</p>
         </div>
       </footer>
     </div>
